@@ -1,16 +1,29 @@
 <template>
-  <div id="nav">
-    Hi
-  </div>
+  <TheHeader />
   <router-view />
 </template>
 
+<script lang="ts">
+import Vue from "vue";
+
+import TheHeader from "./components/layout/TheHeader.vue";
+
+export default {
+  components: {
+    TheHeader
+  }
+};
+</script>
+
 <style>
+body {
+  margin: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 

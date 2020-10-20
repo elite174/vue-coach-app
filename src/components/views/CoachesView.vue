@@ -2,7 +2,7 @@
     <BaseLayout>
         <Filter class="container" />
         <Coach
-            v-for="coach in coaches"
+            v-for="coach in filteredCoaches"
             :key="coach.id"
             :coachData="coach"
             class="container"
@@ -18,6 +18,7 @@ import Coach from '../coaches/Coach.vue';
 import InfoModal from '../coaches/InfoModal.vue';
 
 import { coachesData } from '../../data';
+import { mapGetters } from 'vuex';
 
 export default {
     components: {
@@ -26,10 +27,8 @@ export default {
         BaseLayout,
         InfoModal
     },
-    data() {
-        return {
-            coaches: coachesData
-        };
+    computed: {
+        ...mapGetters('coach', ['filteredCoaches'])
     }
 };
 </script>

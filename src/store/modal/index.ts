@@ -1,5 +1,6 @@
-import { StoreOptions } from 'vuex';
+import { Module } from 'vuex';
 
+import { RootState } from '../typings';
 import { ModalState } from './typings';
 
 interface Data {
@@ -7,7 +8,7 @@ interface Data {
     readonly description: string;
 }
 
-export const modalStore: StoreOptions<ModalState> = {
+export const modalStore: Module<ModalState, RootState> = {
     state: {
         visible: false,
         name: null,
